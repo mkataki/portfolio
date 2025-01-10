@@ -1,2 +1,0 @@
-# portfolio
- lab 1
