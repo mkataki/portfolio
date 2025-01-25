@@ -1,3 +1,11 @@
+:root {
+  --color-accent: violet; 
+  --color-accent-light: oklch(from var(--color-accent) 95% 5% h);
+}
+
+html {
+  accent-color: var(--color-accent); 
+}
 body {
     /* Set line height to 1.5 times the font size
          and use the OS’s UI font as the website font
@@ -9,5 +17,108 @@ body {
     margin-inline: auto;
 
     padding: 1rem;
+  
     
   }
+  form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+  }
+
+  label {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+  }
+
+  input, textarea {
+    font: inherit; 
+    width: 100%; 
+    box-sizing: border-box;
+  }
+  button {
+    grid-column: 1 / -1;    
+  }
+  .project{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em,1fr));
+    gap: 1rem;
+  }
+  .projects article {
+    display: grid; 
+    grid-template-rows: subgrid; 
+    grid-row: span 3; 
+    gap: 1em;
+  }
+
+  .projects article h2 {
+      margin: 0;
+  }
+
+
+  nav ul {
+    display: contents;
+  }
+
+  nav ul li {
+    display: contents;
+  }   
+  nav {
+    display: flex;
+    margin-bottom: 1rem; 
+    border-bottom: 1px solid oklch(80% 3% 200); 
+  }
+  nav a {
+    flex: 1; 
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+    padding: 0.5em; 
+  }
+  nav a.current {
+    border-bottom: 0.4em solid plum; 
+    padding-bottom: 0.1rem;                       
+  }
+
+  nav a:hover {
+      border-bottom: 0.4em solid var(--color-accent); 
+      color: var(--color-accent);    
+      background-color: var(--color-accent-light);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+    }
+
+    h1 {
+        font-size: 350%; 
+        margin-bottom: 1rem; 
+    }
+    
+    h2 {
+        font-size: 200%; 
+        margin-bottom: 0.5rem; 
+    }
+    .cv section {
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+      background-color: #f9f9f9; 
+      padding: 1rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+  
+    .cv section h2 {
+        margin-top: 0; 
+        color: #333; 
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f3f4f6;
+      color: #666;
+      border-radius: 10px;
+      border-top: 1px solid #ddd;
+    }
+      
