@@ -4,6 +4,7 @@
   color-scheme: light dark;
   --footer-background: #666;
   --footer-text-color: #666; 
+  --border-color: pink;
 }
 
 html {
@@ -101,14 +102,16 @@ body {
     h1 {
         font-size: 350%; 
         margin-bottom: 1rem; 
+        color: violet;
     }
     
     h2 {
         font-size: 200%; 
         margin-bottom: 0.5rem; 
+        color: plum;
     }
     .cv section {
-      border: 1px solid #ddd; 
+      border: 1px solid violet; 
       border-radius: 8px; 
       background-color: var(--background-color); 
       padding: 1rem;
@@ -120,6 +123,10 @@ body {
         margin-top: 0; 
         color: var(--text-color); 
     }
+    .contact {
+      margin-top: 0; 
+      color: violet; 
+    }    
     footer {
       text-align: center;
       margin-top: 2rem;
