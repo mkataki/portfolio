@@ -42,6 +42,7 @@ for (let p of pages) {
   nav.append(a);
 }
 
+// Insert the theme switcher at the top
 document.body.insertAdjacentHTML(
   "afterbegin",
   `
@@ -56,35 +57,35 @@ document.body.insertAdjacentHTML(
   `
 );
 
-
+// Reference to the theme dropdown
 const select = document.getElementById("theme-switcher");
 
-// Add event listener to update the theme and save preference
+function applyColorScheme(scheme) {
+  if (scheme === "auto") {
+    document.documentElement.style.removeProperty("color-scheme"); 
+  } else {
+    document.documentElement.style.setProperty("color-scheme", scheme); 
+  }
+}
+
 select.addEventListener("input", function (event) {
   const selectedScheme = event.target.value;
 
-  if (selectedScheme === "auto") {
-    document.documentElement.style.removeProperty("color-scheme"); 
-  } else {
-    document.documentElement.style.setProperty("color-scheme", selectedScheme); 
-  }
+  applyColorScheme(selectedScheme);
 
-  
-  localStorage.colorScheme = selectedScheme;
+  localStorage.setItem("colorScheme", selectedScheme);
 });
 
 
-if ("colorScheme" in localStorage) {
-  const savedScheme = localStorage.colorScheme; // Retrieve saved scheme
+const savedScheme = localStorage.getItem("colorScheme") || "auto";
+applyColorScheme(savedScheme);
 
-  if (savedScheme === "auto") {
-    document.documentElement.style.removeProperty("color-scheme");
-  } else {
-    document.documentElement.style.setProperty("color-scheme", savedScheme); 
-  }
+select.value = savedScheme;
 
-  
-  select.value = savedScheme;
-} else {
-  select.value = "auto";
+if (savedScheme === "auto") {
+  const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+
+  prefersDarkMode.addEventListener("change", () => {
+    applyColorScheme("auto");
+  });
 }
