@@ -1,6 +1,9 @@
 :root {
   --color-accent: violet; 
   --color-accent-light: oklch(from var(--color-accent) 95% 5% h);
+  color-scheme: light dark;
+  --footer-background: #666;
+  --footer-text-color: #666; 
 }
 
 html {
@@ -17,6 +20,9 @@ body {
     margin-inline: auto;
 
     padding: 1rem;
+
+    background-color: canvas; 
+    color: canvastext;
   
     
   }
@@ -68,6 +74,8 @@ body {
     display: flex;
     margin-bottom: 1rem; 
     border-bottom: 1px solid oklch(80% 3% 200); 
+    --border-color: oklch(50% 10% 200 / 40%);
+    border-bottom-color: var(--border-color);
   }
   nav a {
     flex: 1; 
@@ -84,7 +92,7 @@ body {
   nav a:hover {
       border-bottom: 0.4em solid var(--color-accent); 
       color: var(--color-accent);    
-      background-color: var(--color-accent-light);
+      background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
   }
   h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
@@ -102,7 +110,7 @@ body {
     .cv section {
       border: 1px solid #ddd; 
       border-radius: 8px; 
-      background-color: #f9f9f9; 
+      background-color: var(--background-color); 
       padding: 1rem;
       margin-bottom: 2rem;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
@@ -110,15 +118,26 @@ body {
   
     .cv section h2 {
         margin-top: 0; 
-        color: #333; 
+        color: var(--text-color); 
     }
     footer {
       text-align: center;
       margin-top: 2rem;
       padding: 1rem;
-      background-color: #f3f4f6;
-      color: #666;
       border-radius: 10px;
-      border-top: 1px solid #ddd;
     }
-      
+    .color-scheme {
+      position: absolute;
+      top: 1rem; 
+      right: 1rem; 
+      font-size: 80%; 
+      font-family: inherit; 
+      border-radius: 5px; 
+      padding: 0.5rem;
+      z-index: 1000;
+    }
+    
+    .color-scheme select {
+      font-family: inherit;
+    }
+
