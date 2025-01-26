@@ -59,6 +59,7 @@ document.body.insertAdjacentHTML(
 
 const select = document.getElementById("theme-switcher");
 
+// Add event listener to update the theme and save preference
 select.addEventListener("input", function (event) {
   const selectedScheme = event.target.value;
 
@@ -68,16 +69,21 @@ select.addEventListener("input", function (event) {
     document.documentElement.style.setProperty("color-scheme", selectedScheme); 
   }
 
+  
   localStorage.colorScheme = selectedScheme;
 });
 
+
 if ("colorScheme" in localStorage) {
+  const savedScheme = localStorage.colorScheme; // Retrieve saved scheme
+
   if (savedScheme === "auto") {
     document.documentElement.style.removeProperty("color-scheme");
   } else {
     document.documentElement.style.setProperty("color-scheme", savedScheme); 
   }
 
+  
   select.value = savedScheme;
 } else {
   select.value = "auto";
