@@ -1,0 +1,74 @@
+[
+    {
+        "title": "AI based extraction of data from Safety Data Sheets (SDS).",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2025,
+        "description": "This project is to analyse and extract sectional data from safety data sheets which are in PDF format."
+    },
+    {
+        "title": "Recipe Healthiness and Preparation Complexity Analysis Using Random Forests",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "I investigated the relationship between recipe healthiness and preparation complexity using scikit-learn, analyzing data on nutrition, preparation steps, and ratings."
+    },
+    {
+        "title": "Web Scraping Project",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description":"Scraped Zara’s website using Python to compile a comprehensive dataset, extracting product details such as name, price,category, and image URL."
+    },
+    {
+        "title": "Explored Sunlight throughout the year versus weather google searches",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "This visualization is a line plot that compares whether Google searches and the average amount of sunshine during a particular month. To properly compare the data I standardized both data by using the z-score."
+    },
+    {
+        "title": "Dolor vero dolorem deserunt.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "Vero rem porro eaque aspernatur facere possimus sed. Sint natus dicta itaque provident aliquam, esse neque atque sequi et eos quos vel quod totam molestias ad? In adipisci distinctio ipsum."
+    },
+    {
+        "title": "Error reprehenderit consectetur voluptatem?",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "Veniam tempora autem animi voluptate, deserunt voluptatibus vel eos dolor maiores rem est explicabo facere officiis, omnis amet numquam odio. Iste minima delectus voluptas voluptate molestiae fuga veritatis quisquam esse."
+    },
+    {
+        "title": "Non explicabo commodi totam.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "Veritatis ex officiis odio consequatur minus quos aliquid suscipit vel exercitationem autem obcaecati maiores ipsum quae, quaerat at corrupti repellat iure earum laudantium error! Similique rerum vero nulla! Odit, sequi."
+    },
+    {
+        "title": "Voluptas sit placeat aperiam!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2024,
+        "description": "Nobis, rem earum inventore, adipisci non quis explicabo cumque, voluptate quo at porro accusamus repudiandae nemo! Quam, dignissimos quidem. Quod molestiae ipsum laudantium praesentium. Similique quas aperiam magni et totam!"
+    },
+    {
+        "title": "Facilis asperiores doloremque ipsam.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2023,
+        "description": "Ab consequatur voluptatum itaque perferendis ex rem enim possimus maxime dicta, est nihil quaerat accusamus deserunt, quia animi! Eius saepe a quam illo voluptatem veritatis, delectus facilis sunt aspernatur odit."
+    },
+    {
+        "title": "Rem exercitationem fugit dicta.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2023,
+        "description": "Deserunt minus tempora esse! Sunt itaque animi vitae amet in laudantium sit, deserunt, debitis quos necessitatibus consectetur neque? Quam voluptatibus voluptates quo corrupti. Et natus cum ut veniam vel? Doloremque!"
+    },
+    {
+        "title": "Dignissimos similique ipsum debitis.",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2023,
+        "description": "Incidunt eaque voluptas fuga consequuntur recusandae doloremque illo veniam vitae soluta. Quo molestiae nostrum assumenda illo, quisquam facere sequi modi inventore similique eum quas nisi praesentium at dolorum velit numquam?"
+    },
+    {
+        "title": "Est odio aperiam magni!",
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "year": 2022,
+        "description": "Harum similique dolor, amet sapiente, beatae voluptatum, nesciunt accusantium repellendus excepturi quisquam eligendi officiis rem earum ipsam velit commodi ad. Sit maxime, voluptatibus illo rerum veritatis voluptate suscipit voluptatum minus!"
+    }
+]
