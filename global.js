@@ -12,6 +12,7 @@ let pages = [
   { url: "projects/", title: "Projects" },
   { url: "contact/", title: "Contact" },
   { url: "cv/", title: "CV" },
+  {url: "meta/", title: "Meta"},
   { url: "https://github.com/mkataki", title: "GitHub Profile", external: true },
 ];
 
@@ -119,7 +120,10 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
     article.innerHTML = `
     <h3>${project.title}</h3>
     <img src="${project.image}" alt="${project.title}">
-    <p>${project.description}</p>
+    <div class="project-info">
+      <p>${project.description}</p>
+      <p class="project-year">${project.year}</p>
+    </div>
     `;
     containerElement.appendChild(article);
   }

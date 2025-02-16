@@ -66,6 +66,78 @@ body {
   .projects article h2 {
       margin: 0;
   }
+  .project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-year {
+      font-size: 14px;
+      font-weight: bold;
+      font-family: "Brush Script MT" cursive;
+      color: #ff69b4; /* Hot pink */
+      margin-top: 6px;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+  }
+  /* ✅ Create a flex container to align pie chart & legend */
+  .chart-container {
+    display: flex; /* Arrange children side by side */
+    align-items: center; /* Center them vertically */
+    gap: 20px; /* Add spacing between pie chart and legend */
+    justify-content: center; 
+    margin-bottom: 30px/* Center the entire layout */
+  }
+  #projects-pie-plot:has(path:hover) path:not(:hover) {
+    opacity: 0.5;
+    transition: 300ms;
+  }
+  /* ✅ Ensure the SVG stays at a reasonable size */
+  #projects-pie-plot {
+    width: 200px; /* Adjust as needed */
+    height: 200px;
+  }
+  
+  .selected {
+    --color: oklch(60% 45% 0) !important;
+    fill: var(--color);
+    
+  }
+  path {
+    cursor: pointer;
+  }
+
+  /* ✅ Style the legend */
+  .legend {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); /* Responsive grid */
+    gap: 10px;
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ✅ Style individual legend items */
+  .legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between swatch and text */
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* ✅ Style the color swatch */
+  .legend .swatch {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: var(--color);
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
 
 
   nav ul {
@@ -166,4 +238,109 @@ body {
     #profile-stats dd {
         grid-row: 2; /* Place all <dd> elements in the second row */
     }
+    /* Stats Section Styling */
+  .stats {
+    font-family: Arial, sans-serif;
+    background: #fff0f5; /* Light pink background */
+    border-radius: 10px;
+    padding: 20px;
+    width: fit-content;
+    max-width: 90%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row; /* Aligns stats horizontally */
+    justify-content: space-around;
+    gap: 20px;
+  }
 
+  /* Style the individual stat blocks */
+  .stat-item {
+    display: flex;
+    flex-direction: column; /* Stacks title & value */
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Style the stat labels */
+  .stats dt {
+    font-weight: bold;
+    color: #ff1493; /* Deep pink text */
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  /* Style the stat values */
+  .stats dd {
+    margin-left: 0;
+    font-size: 1.3rem;
+    color: #ff69b4; /* Lighter pink for values */
+    font-weight: bold;
+  }
+
+  /* Center the stats container */
+  #stats {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gridlines line {
+    stroke: #ccc;
+    stroke-dasharray: 3 3; /* Dashed lines */
+  }
+
+  /* Tooltip styles */
+  .tooltip {
+    position: fixed; /* Fixed position to stay in viewport */
+    top: 1em;
+    left: 1em;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle elevation */
+    border-radius: 6px;
+    padding: 10px;
+    backdrop-filter: blur(5px); /* Frosted glass effect */
+    pointer-events: none; /* Prevent interference with mouse */
+  }
+
+  /* Grid layout for tooltip */
+  dl.info {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 10px;
+    row-gap: 5px;
+    margin: 0;
+  }
+
+  dl.info dt {
+    font-weight: bold;
+    color: #555;
+  }
+
+  dl.info dd {
+    margin: 0;
+    color: #222;
+  }
+
+  /* Hide tooltip when not needed */
+  dl.info[hidden]:not(:hover, :focus-within) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Smooth transition for visibility */
+  dl.info {
+    transition-duration: 300ms;
+    transition-property: opacity, visibility;
+  }
+
+  /* Dot interaction styles */
+  circle {
+    transition: 200ms;
+    transform-origin: center;
+    transform-box: fill-box;
+  }
+
+  circle:hover {
+    transform: scale(1.5);
+  }
