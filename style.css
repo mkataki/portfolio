@@ -16,7 +16,7 @@ body {
        */
     font: 100%/1.5 system-ui;
 
-    max-width: 100ch;
+    max-width: min(120ch, 80vw);
 
     margin-inline: auto;
 
@@ -340,7 +340,145 @@ body {
     transform-origin: center;
     transform-box: fill-box;
   }
+  circle.selected {
+    fill: #ff6b6b;
+  }
 
   circle:hover {
     transform: scale(1.5);
   }
+  @keyframes marching-ants {
+    to {
+      stroke-dashoffset: -8; /* 5 + 3 */
+    }
+  }
+  
+  .selection {
+    fill-opacity: 0.1;
+    stroke: black;
+    stroke-opacity: 0.7;
+    stroke-dasharray: 5 3;
+    animation: marching-ants 2s linear infinite;
+  }
+  circle.selected {
+    fill: #ff6b6b;
+  }
+
+  #filter-container {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+#selectedTime {
+    margin-left: auto;
+    font-weight: bold;
+}
+.files > div {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+dd {
+  grid-column: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  align-content: start;
+  gap: 0.15em;
+  padding-top: 0.6em;
+  margin-left: 0;
+  justify-content: flex-start;
+}
+
+dt code {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+dt small {
+  display: block;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.line {
+  display: flex;
+  width: 0.5em;
+  aspect-ratio: 1;
+  background: steelblue; /* Default color */
+  border-radius: 50%;
+}
+#scrollytelling {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+/* feel free to play with this to make your scrolly more seemless with your plot */
+#scroll-container {
+  grid-column: 1;
+  position: relative;
+  width: 95%;
+  height: 350px;
+  overflow-y: scroll;
+  border: 1px solid #ccc;
+  margin-bottom: 50px;
+}
+
+#chart {
+  grid-column: 2;
+}
+
+#spacer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: none; /* transparent */
+  pointer-events: none;
+}
+
+#items-container {
+  position: relative;
+  min-height: 400px; /* ✅ Adjust for more space */
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; /* ✅ Ensures correct stacking */
+  gap: 10px; /* ✅ Adds spacing between commits */
+}
+
+.item {
+  height: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  border-bottom: 2px solid #eee;
+}
+.scroll-item {
+  width: 100%;
+  min-height: auto; /* ✅ Let content determine height */
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  font-size: 1rem;
+  line-height: 1.5;
+  word-wrap: break-word;
+  overflow: visible; /* ✅ Prevent text clipping */
+  display: flex; /* ✅ Ensure correct layout */
+  flex-direction: column; /* ✅ Stack text properly */
+}
+#commit-tooltip {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  padding: 10px;
+  display: none; /* ✅ Change this if needed */
+  pointer-events: none; /* ✅ Prevent accidental hiding */
+}
+#scroll-container {
+  max-height: 80vh; 
+  overflow-y: auto;
+}
